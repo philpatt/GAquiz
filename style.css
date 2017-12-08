@@ -1,0 +1,9 @@
+body{
+	text-align:center;
+}
+.container{
+	display: inline-block;
+}
+.buttons{
+	display: inline-block;
+}
