@@ -1,36 +1,25 @@
 // document.getElementById("q2").style.display = "none";
 var allQuestions = [
 	{
-		question: "1. There are no additional spacetime dimensions"}, 
-		// choices: ["True", "False",], 
+		question: "Neil attended Harvard and while there he lettered in wrestling and was a member of the rowing team."}, 
 	{
-		question: "2. The nature of dark energy is ultra cold"}, 
-		// choices: ["True", "False",], 
+		question: "Neil received a master's degree in astrophysics from Columbia University in 1989 and his PhD in 1991."}, 
 	{
-		question: "3. Protons are unstable"},
-		// choices: ["True", "False",],
+		question: "Protons are unstable"},
 	{
-		question: "4. The new theory of matter and light is needed at the highest energies"},
-		// choices: ["True", "False",],
+		question: "The new theory of matter and light is needed at the highest energies"},
 	{
-		question: "5. With more energy water molecules move faster"},
-		// choices: ["True", "False",],
-		
+		question: "Neil's book, Death by Black Hole and Other Cosmic Quandaries, was a New York Times bestseller"},
 	{
-		question: "6. Tardigrades have lived on earth for 5 hundred million years"},
-		// choices: ["True", "False",],
+		question: "Neil once described his high school persona as 'a nerd who could kick your butt.' "},
 	{
-		question: "7. It is possible to escape a black hole"}, 
-		// choices: ["True", "False",], 
+		question: "It is possible to escape a black hole"}, 
 	{
-		question: "8. The universe began in a tremendous burst of expansion"}, 
-		// choices: ["True", "False",], 
+		question: "The universe began in a tremendous burst of expansion"},  
 	{
-		question: "9. Neutrons are mostly abundantly present in the universe today"},
-		// choices: ["True", "False",],
+		question: "In 2006, the former planet,Pluto, and Neil, were considered 'frenemies.' "},
 	{
-		question: "10. Earth is flat"},
-		// choices: ["True", "False",],
+		question: "Earth is flat"},
 
 ]; 
 
@@ -40,9 +29,10 @@ var turn = 0;
 var falseScore = 0
 var score = 0;
 var ask = document.getElementById('q');
-// var ask2 = document.getElementById('q2');
+
 var tBtn = document.getElementById('t');
 var fBtn = document.getElementById('f');
+
 
 ask.innerText = allQuestions[0].question;
 
@@ -66,19 +56,12 @@ var addTrueEvent = tBtn.addEventListener('click',function(){
 	} else if(turn === 6){
 		score += 1;
 		console.log("right");
-	// } else if(turn === 8){
-	// 	score += 1;
-	// 	console.log("right");
 	} else if(turn === 9){
 		score += 1;
 		console.log("right");
-	// } else if(turn === 10){
-	// 	score += 1;
-	// 	console.log("right");
 	} else{
 		console.log('false');
 	};
-
 	ask.innerText = allQuestions[turn].question;
 	console.log(turn);
 	console.log(falseScore + " is false score value");
@@ -102,7 +85,14 @@ var addFalseEvent = fBtn.addEventListener('click',function(){
 	} else if(turn === 10){
 		falseScore += 1;
 		console.log("right");
-		ask.innerText = 'THIS IS YOUR SCORE: ' + (falseScore + score) * 10;
+		// document.body.style.backgroundImage = "url('img_tree.png')";
+		// ask.style.color = 'white';
+		// ask.innerText =(falseScore + score) * 10 +' % correct';
+		// document.getElementsByClassName("wrapper").style = "none";
+		document.querySelectorAll(".wrapper")[0].style.backgroundImage = "url('img/NEIL.jpg')";
+        ask.innerText =(falseScore + score) * 10 +' % correct';
+        document.getElementById("q").style.color = "#F7D86B ";
+
 		fBtn.style.display = 'none';
 		tBtn.style.display = 'none';
 		console.log('overall score is '+ (falseScore + score) );
